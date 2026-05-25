@@ -77,6 +77,11 @@ Format:
 ## Situation
 <one-paragraph distillation>
 
+## Questions this artifact answers
+- What does each chosen lens *ask* of the situation?
+- What does each lens surface (foreground) vs miss (background)?
+- Where do lenses converge, diverge, or leave gaps?
+
 ## Lenses applied
 - <lens 1 name + source: built-in | custom-from-<artifact>>
 - <lens 2 name + source>

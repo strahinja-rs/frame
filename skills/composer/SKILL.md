@@ -65,16 +65,18 @@ Build a *tentative plan* (which skills, in what order). Do not commit yet — Ph
 
 **Default sequence shape:** Perceive (probe / from-corpus) → Articulate (problem-statement plus optional jtbd / lens / scope / stakes) → optionally Reframe → terminate with problem-statement. Iteration loops between these as needed.
 
-### Phase 2: Intake (max 3-4 questions, with reserved 4th)
+### Phase 2: Intake (hard cap 4 questions; optional Phase 3(d) refinement +3; absolute ceiling 7)
 
-Composer asks the user 3-4 questions to gather context the situation didn't surface. Use the question budget intelligently:
+Composer asks the user up to 4 questions in Phase 2 to gather context the situation didn't surface. Use the question budget intelligently:
 
 - **Question 1** typically clarifies the *mode*: are you trying to decide / understand / explore / scope?
 - **Question 2** typically gathers *missing context*: stakes, stakeholders, timeline, what's been tried.
 - **Question 3** typically surfaces a *load-bearing assumption*: gut read, default option, conflict point.
 - **Question 4** (reserved, ask only if needed): the *disambiguator* if Q1-Q3 didn't converge.
 
-**Strict cap: never ask more than 4 questions in Phase 2.** If composer can't get enough signal in 4 questions, proceed with low extraction-confidence and surface that prominently.
+**Hard cap: never ask more than 4 questions in Phase 2.** If composer can't get enough signal in 4 questions, proceed to Phase 3 with low extraction-confidence and surface that prominently.
+
+**Total intake ceiling: Phase 2 cap 4 + optional Phase 3(d) refinement +3 = absolute ceiling of 7 questions across the full composition.** If the user picks option (d) at Phase 3 (more clarifying questions before deciding) more than once, the absolute ceiling fires — composer proceeds with whatever signal it has, marks extraction-confidence honestly, and surfaces the checkpoint again.
 
 The questions should be specific and answerable. Avoid "what do you want?" / "tell me more" — those are abdications. Each question should narrow the space.
 
@@ -106,7 +108,7 @@ WHAT NEXT?
 
 Option (c) is the **bidirectional checkpoint** — user can exit to /approach at any point. Per [PRINCIPLES.md §12](../../PRINCIPLES.md#12-checkpoint-to-approach-is-always-available--new-to-frame), this is the fundamental affordance of the plugin.
 
-If user picks (d), ask 2-3 more questions (counts against the original 3-4 cap — total intake never exceeds 6-7 questions in any case), then re-ask Phase 3.
+If user picks (d), ask 2-3 more questions (counts against the absolute ceiling — Phase 2 hard cap 4 + Phase 3(d) refinement +3 = ceiling 7). Then re-ask Phase 3. Refinement round can fire only once; second invocation of (d) triggers absolute ceiling — composer proceeds with current signal, marks extraction-confidence honestly, and surfaces the checkpoint as the final decision point before running skills.
 
 If user picks (b), skip to `frame:problem-statement` only. Produce minimum-viable Polya 9 from intake answers. Mark `extraction-confidence: low` or `medium`. Surface bidirectional checkpoint again.
 
@@ -142,9 +144,28 @@ Whatever path the composition took, **always end with `frame:problem-statement`*
 
 Per [PRINCIPLES.md §13](../../PRINCIPLES.md#13-universal-terminator--every-composition-ends-with-frameproblem-statement--new-to-frame), this is non-negotiable. Even if the user exits to /approach early (option (c) at any checkpoint), composer first produces a minimum-viable `frame:problem-statement` from whatever frame material exists. Always.
 
+**Minimum-viable Polya 9 from 3-4 intake answers** (the early-exit case):
+
+When the user exits early after only intake (Phase 2) plus the Phase 3 checkpoint, composer must still produce a complete 9-target Problem Statement. The inference rules:
+
+| Polya field | When intake didn't cover it explicitly |
+|---|---|
+| 1. Desired end state | Infer from situation text + Q1 (mode) answer. Mark Assumption if not user-stated. |
+| 2. Current state | Infer from situation text. Mark Assumption if interpretation. |
+| 3. Gap | Infer from end-state − current-state. Always derivable from 1+2. |
+| 4. Deliverable shape | Infer from situation type (decision / artifact / behavior). Mark Assumption. |
+| 5. Verification criterion | Most likely to be missing. Either ask in Phase 2 (recommended) or infer + mark Assumption + flag `medium`-or-`low` confidence. |
+| 6. Constraints | Combine: stated in situation + intake Q2 (timeline/stakes) answer + inferred reversibility. Mark Assumptions per inferred constraint. |
+| 7. Known vs unknown | Composer's own meta-view: what intake surfaced as known, what remains unknown. Always populatable. |
+| 8. User role | Default to "gates: at irreversible steps; autonomy: on local/reversible work" if not stated. Mark Assumption. |
+| 9. Stakes | Infer from situation + intake Q3 (load-bearing assumption / gut). Mark Assumption if not user-stated. |
+
+The minimum-viable Polya 9 will typically land at `extraction-confidence: low` or `medium`. **Mark honestly**: low for 3-4 fields populated from inference, medium for ~6/9 fields stated or directly inferable. Never inflate confidence to make the artifact look complete.
+
 Mark `extraction-confidence` honestly based on how much frame work actually ran:
-- Single-skill composition (just problem-statement, exited early): typically `low` or `medium`
-- Full composition with probe + 2 articulation skills + reframe + terminator: typically `high`
+- **low** (4 of 9 fields stated, 5 inferred): single-skill composition (just problem-statement, exited at Phase 3 checkpoint)
+- **medium** (6-7 of 9 fields stated): single skill + Phase 3 refinement, OR 2-3 skills ran lightly
+- **high** (8-9 of 9 fields stated or directly inferable): full composition with probe + 2-3 articulation skills + reframe + terminator
 
 ### Phase 6: Write composition root
 
@@ -222,6 +243,7 @@ Re-iteration is opt-in — only fires when explicitly re-invoked. Default to ori
 - **Hiding the iteration log.** If composer re-iterated mid-composition, the composition.md must show it. Hidden iteration is hidden composition (PRINCIPLES.md §6 violation).
 - **Treating low extraction-confidence as a failure.** Low confidence is *information*. It tells the user (and downstream tools) that the artifact is provisional. Hiding it is worse than producing it.
 - **Question-second.** A frame skill that starts with structure ("here's the Polya template, fill it in") instead of with questions ("what does done look like here?") violates the question-first principle (PRINCIPLES.md §10).
+- **Re-framing as avoidance / frame work as procrastination.** Iteration is the norm *only when new material justifies it* (PRINCIPLES.md §11). Re-probing because the user is uncomfortable with the existing frame's implications — rather than because new material surfaced — is approach-/solution-space avoidance masquerading as frame work. Composer should ask "what new material justifies this iteration?" at each iteration trigger and accept "no new material" as the cue to push toward terminator + hand-off, not as license to keep framing. This is the realistic v1 failure mode for high-frame-fluency users; structurally invited by the iteration-is-norm + checkpoint-always-available principles, and must be guarded against by the composer's discipline.
 
 ## Rules
 

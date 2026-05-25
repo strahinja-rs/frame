@@ -96,6 +96,12 @@ Format:
 ## Situation
 <one-paragraph distillation>
 
+## Questions this artifact answers
+- What's definitely IN this work?
+- What's definitely OUT?
+- What's ADJACENT — related, tempting to include, but explicitly out?
+- Where is the boundary structurally weak, and what's the pre-decided response when drift appears?
+
 ## In scope
 
 | # | Item | Why in | Acceptance signal |

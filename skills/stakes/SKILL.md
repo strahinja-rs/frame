@@ -105,6 +105,13 @@ Format:
 ## Decision under consideration
 <one-sentence summary of the choice>
 
+## Questions this artifact answers
+- If we do this, what's at risk?
+- If we DON'T do this, what's at risk?
+- What's reversible? What isn't?
+- What's the opportunity cost in each direction?
+- Which direction's costs compound if wrong — which is recoverable?
+
 ## Cost of action ("if we do this")
 
 | # | Scenario | Probability | Severity | Domain |

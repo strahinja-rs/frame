@@ -97,7 +97,7 @@ This is the meta-analysis layer. Alternatives are means; the structural read is 
 
 The skill recommends what to do with the reframe artifact:
 
-- **Adopt an alternative**: if one alternative is more accurate, surface that.
+- **Surface the structural choice**: if alternatives substantially differ in foreground/background, name the *choice the user now has to make* (without recommending one). The skill produces alternatives + the structural read; the user decides which to adopt.
 - **Synthesize**: if multiple alternatives each capture something true, recommend a synthesis (the user crafts; this skill points).
 - **Keep the original, with awareness**: sometimes the original frame is right but the user benefits from knowing what it's backgrounding.
 - **Re-probe**: if alternatives surface assumptions worth checking, recommend a `frame:probe` iteration.

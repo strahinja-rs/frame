@@ -98,6 +98,11 @@ Format:
 ```markdown
 # JTBD: <slug>
 
+## Questions this artifact answers
+- Who is involved in this situation (every stakeholder, including the ones not in the room)?
+- What progress is each one trying to make — what job are they hiring this work to do?
+- Where do JTBDs conflict structurally?
+
 ## Stakeholders
 1. <stakeholder name + role>
 2. <stakeholder name + role>

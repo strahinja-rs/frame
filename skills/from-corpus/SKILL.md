@@ -34,6 +34,7 @@ Extracts a frame from a complex existing artifact. The corpus is read **directly
 - Corpus is small enough to just read (< 5 pages) — no overhead needed.
 - The corpus is summaries already, and the source is unavailable — flag low-confidence and proceed with `frame:probe` on the summaries, but skip this skill (Direct-Use Rule failure).
 - The user wants a *summary* of the corpus, not a *frame extracted from it* — that's `/research` or summarization tooling, not frame work.
+- The user needs *new* sources gathered (web research, market intelligence, competitor analysis) — that's `/research`. This skill is for material *already in hand*, surfacing what the existing corpus is pointing at. The distinction matters: /research expands the corpus; from-corpus extracts a frame from the corpus that exists.
 
 ## Process
 
