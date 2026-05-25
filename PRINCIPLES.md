@@ -159,6 +159,10 @@ This is **the practice**, not a sign that something went wrong on the first pass
 
 **Operational consequence:** frame artifacts are *versioned in place* (later applications append, prior states preserved). Composer offers re-iteration as a first-class option at every checkpoint, not as a fallback.
 
+**The discipline that catches iteration-as-procrastination: `/gut-check`.** Iteration is the norm *only when new material justifies it*. Re-probing because the user is uncomfortable with the existing frame's implications — rather than because new material surfaced — is approach-/solution-space avoidance masquerading as frame work. The structural countermeasure is the user-invoked `/gut-check` skill: 10 plain-language self-assessment questions that surface drift, fake progress, and missing definition-of-done. Q3 (telos), Q6 (how close to done), Q7 (definition-of-done), and Q9 (keep vs change) are particularly load-bearing for frame work — they catch the moment the user has been iterating without convergence and surface "we should change to action mode" as the honest answer.
+
+`/gut-check` is named as a callable in `frame:composer`'s checkpoints (option e at Phase 4) and in `frame:reframe`'s anti-patterns (no-convergence case). It's user-invoked, slash-only — never auto-fires. The skill exists so the user can deliberately pause when they suspect the iteration loop has become busy-work.
+
 ---
 
 ## 12. Checkpoint to /approach is always available — *new to /frame*

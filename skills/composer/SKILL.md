@@ -134,9 +134,12 @@ WHAT NEXT?
   (b) Insert <suggested-skill> before continuing (because <surfaced material>)
   (c) Hand off to /approach NOW
   (d) Stop here, produce frame:problem-statement, then hand off
+  (e) Invoke /gut-check before deciding (honest self-assessment of whether iteration is justified by new material or has become busy-work)
 ```
 
 The user decides at each checkpoint. Composer never silently keeps going deeper without a checkpoint surface.
+
+**Option (e) is the discipline that catches iteration-as-procrastination.** When the user picks (e), composer pauses and the user invokes `/gut-check` separately. `/gut-check`'s 10 questions (particularly Q3 telos, Q6 how-close, Q7 definition-of-done, Q9 keep-vs-change) surface whether composer should continue framing or hand off. After `/gut-check`, composer re-asks the checkpoint with the gut-check's findings as new context. See [PRINCIPLES.md §11](../../PRINCIPLES.md#11-iteration-is-the-norm-not-the-failure-mode--new-to-frame).
 
 ### Phase 5: Universal terminator
 
@@ -243,7 +246,7 @@ Re-iteration is opt-in — only fires when explicitly re-invoked. Default to ori
 - **Hiding the iteration log.** If composer re-iterated mid-composition, the composition.md must show it. Hidden iteration is hidden composition (PRINCIPLES.md §6 violation).
 - **Treating low extraction-confidence as a failure.** Low confidence is *information*. It tells the user (and downstream tools) that the artifact is provisional. Hiding it is worse than producing it.
 - **Question-second.** A frame skill that starts with structure ("here's the Polya template, fill it in") instead of with questions ("what does done look like here?") violates the question-first principle (PRINCIPLES.md §10).
-- **Re-framing as avoidance / frame work as procrastination.** Iteration is the norm *only when new material justifies it* (PRINCIPLES.md §11). Re-probing because the user is uncomfortable with the existing frame's implications — rather than because new material surfaced — is approach-/solution-space avoidance masquerading as frame work. Composer should ask "what new material justifies this iteration?" at each iteration trigger and accept "no new material" as the cue to push toward terminator + hand-off, not as license to keep framing. This is the realistic v1 failure mode for high-frame-fluency users; structurally invited by the iteration-is-norm + checkpoint-always-available principles, and must be guarded against by the composer's discipline.
+- **Re-framing as avoidance / frame work as procrastination.** Iteration is the norm *only when new material justifies it* (PRINCIPLES.md §11). Re-probing because the user is uncomfortable with the existing frame's implications — rather than because new material surfaced — is approach-/solution-space avoidance masquerading as frame work. Composer should ask "what new material justifies this iteration?" at each iteration trigger and accept "no new material" as the cue to push toward terminator + hand-off, not as license to keep framing. **The structural discipline that catches this is `/gut-check`** — surfaced at Phase 4 checkpoint as option (e). When the user picks (e), `/gut-check`'s 10 plain-language questions force honest assessment of telos (Q3), how-close-to-done (Q6), definition-of-done (Q7), and keep-vs-change (Q9). If the gut-check answer is "no real progress, no definition of done, no convergence," that's the cue to terminate frame work and hand off. This is the realistic v1 failure mode for high-frame-fluency users; structurally invited by the iteration-is-norm + checkpoint-always-available principles, and must be guarded against by the composer's discipline AND by the user's deliberate `/gut-check` invocation.
 
 ## Rules
 
@@ -267,6 +270,7 @@ Re-iteration is opt-in — only fires when explicitly re-invoked. Default to ori
   - Optional supporting artifacts: `probe.md`, `from-corpus.md`, `jtbd.md`, `lens.md`, `scope.md`, `stakes.md`, `reframe.md`
 - Sibling frame skills (all under the `frame` plugin namespace, all live): `frame:probe`, `frame:from-corpus`, `frame:problem-statement`, `frame:jtbd`, `frame:lens`, `frame:scope`, `frame:stakes`, `frame:reframe`. Composer invokes their Process conceptually when generating per-skill artifacts.
 - Downstream sibling plugin: `approach` — receives `problem-statement.md` as input to `/approach:composer` Phase 1.
+- External callable: `/gut-check` — canonical user-invoked between-skill alignment check. Surfaced as Phase 4 checkpoint option (e). The structural discipline that catches the "iteration as procrastination" failure mode named in Anti-Patterns. Composer should NOT auto-invoke; the user reaches for it deliberately when they suspect iteration has become busy-work.
 
 ## Worked example
 

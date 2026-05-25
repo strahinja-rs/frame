@@ -166,4 +166,5 @@ If invoked from `frame:composer`, return control to composer with the probe arti
 - Output (standalone): `<contracts-root>/probe-<slug>.md`
 - Output (composer): `<contracts-root>/frame-<slug>/probe.md`
 - Sibling frame skills (all under `frame` plugin, all live): `frame:composer`, `frame:problem-statement`, `frame:from-corpus`, `frame:jtbd`, `frame:lens`, `frame:scope`, `frame:stakes`, `frame:reframe`.
+- External callable: `/gut-check` — if probing keeps surfacing new material across multiple passes without convergence, `/gut-check` is the user-invoked discipline to honestly assess whether more probing is warranted or whether the user is fishing for permission to stop. User-invoked, slash-only.
 - Theoretical grounding: Schön, *The Reflective Practitioner* (1983) — "naming and framing" the problem; Weick, sensemaking literature; Russo & Schoemaker on frame blindness.

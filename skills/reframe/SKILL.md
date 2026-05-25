@@ -175,6 +175,7 @@ Skill is framing-only. Reframe surfaces alternatives and structural choices; the
 - **Picking the "right" alternative.** The skill surfaces alternatives + structural reads; the user picks. Skill picking violates frame-only and presumes information the skill doesn't have (the user's values, context, priorities).
 - **Alternatives that share no continuity with the original.** Every alternative should acknowledge what it *shares* with the current frame, not just differ. Pure-difference alternatives feel arbitrary.
 - **Question-second.** Producing alternatives without first asking the two anchor questions ("what is current frame foregrounding?" "what else could this be?") — alternatives without explicit anchoring questions are templated, not generated.
+- **No convergence after multiple reframe rounds.** Reframing without convergence is the canonical procrastination shape for frame work — "let me generate 3 more alternatives" forever. If the user has run reframe more than twice on the same situation and isn't closer to picking a frame (or to a synthesis), the discipline is `/gut-check` (user-invoked) — its 10 questions surface whether the user is actually clearer (Q6 how-close-to-done, Q9 keep-vs-change) or just more confused. If `/gut-check` reveals no real progress, the cue is to stop reframing, accept the current frame with its known limitations, and hand off to /approach with `extraction-confidence: medium` and the open alternatives recorded in Assumptions for downstream visibility.
 
 ## Rules
 
@@ -196,4 +197,5 @@ Skill is framing-only. Reframe surfaces alternatives and structural choices; the
 - Output (standalone): `<contracts-root>/reframe-<slug>.md`
 - Output (composer): `<contracts-root>/frame-<slug>/reframe.md`
 - Sibling frame skills (all under `frame` plugin, all live): `frame:composer`, `frame:probe`, `frame:problem-statement`, `frame:from-corpus`, `frame:jtbd`, `frame:lens`, `frame:scope`, `frame:stakes`.
+- External callable: `/gut-check` — particularly relevant for reframe given the no-convergence procrastination shape (see Anti-Patterns). User-invoked, slash-only.
 - Theoretical grounding: Russell Ackoff on "right vs wrong problem"; Mitroff's Type III error; Schön on framing and reframing in practice; behavioral decision theory on frame blindness (Russo & Schoemaker, Kahneman).
