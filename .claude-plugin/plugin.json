@@ -1,0 +1,12 @@
+{
+  "name": "frame",
+  "version": "0.1.0",
+  "description": "Frame-space skills — the 'what' of work. Each skill takes an unstructured situation and helps the user see, articulate, or reframe the problem before any approach is chosen. AI as perceptual lever, not generator. Family: probe, problem-statement, jtbd, lens, scope, stakes, reframe, from-corpus. Plus composer (the meta-skill that picks and sequences the family, with bidirectional checkpoint to /approach). Pairs with the /approach plugin to close the loop: problem → frame → approach → solution. See ARCHITECTURE.md.",
+  "author": {
+    "name": "Strahinja Krstić",
+    "email": "krstic@strahinja.rs"
+  },
+  "homepage": "https://github.com/strahinja-rs/frame",
+  "repository": "https://github.com/strahinja-rs/frame",
+  "license": "MIT"
+}
