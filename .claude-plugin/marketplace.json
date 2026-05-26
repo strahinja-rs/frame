@@ -1,19 +1,19 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "frame",
-  "description": "Marketplace for the `frame` plugin — frame-space cognitive skills that help the user see, articulate, and reframe a problem before any approach is selected. Sibling to the `approach` marketplace; the two compose into the full problem→frame→approach→solution cascade. See plugin ARCHITECTURE.md.",
+  "description": "Marketplace for the `frame` plugin — frame-space cognitive skills that help the user find, finish, and hand off a frame before any approach is selected. Sibling to the `approach` marketplace; the two compose into the full problem→frame→approach→solution cascade. See plugin ARCHITECTURE.md.",
   "owner": {
     "name": "Strahinja Krstić",
     "email": "krstic@strahinja.rs"
   },
   "metadata": {
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "frame",
-      "description": "Frame-space skills — probe, problem-statement, jtbd, lens, scope, stakes, reframe, from-corpus, plus the composer meta-skill. Frame-only, never executes.",
-      "version": "0.1.0",
+      "description": "Frame-space skills — find-frame (probe, problem-statement, jtbd, lens, scope, stakes, reframe, from-corpus) + finish-frame (devil, audience-pivot) + composer meta-skill. Frame-only, never executes.",
+      "version": "0.2.0",
       "category": "development",
       "author": {
         "name": "Strahinja Krstić"

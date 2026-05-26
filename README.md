@@ -6,19 +6,28 @@ The plugin operates in the **frame** layer of the `problem → frame → approac
 
 **Pairs with** the `approach` plugin to close the loop: `/frame:composer` produces a canonical Polya 9-target Problem Statement; that statement is the input to `/approach:composer`, which produces the execution plan.
 
-## The 9 skills (v1)
+## The 11 skills (v0.2.0)
+
+**Find-frame skills (v0.1.0):**
 
 | Skill | Layer | What it does |
 |---|---|---|
 | `frame:composer` | Meta | Reads unstructured situation, picks frame skills, sequences them, manages 3-4 question intake + bidirectional checkpoint (exit to /approach or continue frame work) |
-| `frame:probe` | Perceive | Surface assumptions, foreground/background, missing pieces — questions, not answers |
+| `frame:probe` | Perceive | Surface assumptions, foreground/background, missing pieces — questions, not answers. **Mode A** for unstructured situations / **Mode B** validates existing Problem Statements |
 | `frame:from-corpus` | Perceive → Articulate | Extract a frame from a complex existing artifact (transcripts, brief, set of interviews) |
 | `frame:problem-statement` | Articulate | Polya 9-target canonical Problem Statement — **universal terminator** that feeds /approach:composer |
 | `frame:jtbd` | Articulate | Jobs-to-be-Done articulation, per stakeholder |
-| `frame:lens` | Articulate | Apply named analytical lens(es) — built-in library + custom-define |
+| `frame:lens` | Articulate | Apply named analytical lens(es) — built-in library + custom-define + persona-shaped lenses |
 | `frame:scope` | Articulate | Boundary clarification (in scope / out / adjacent) |
 | `frame:stakes` | Articulate | Cost-of-error + reversibility + opportunity cost |
 | `frame:reframe` | Reframe | Generate N alternative frames; foreground/background diff per alternative |
+
+**Finish-frame skills (v0.2.0 additions):**
+
+| Skill | Layer | What it does |
+|---|---|---|
+| `frame:devil` | C+ (post-reframe) | Adversarial pressure-test of a *committed* frame — steelman the opposite, name what would have to be true for the frame to be wrong. One round, clean termination. |
+| `frame:audience-pivot` | C+ (post-articulation) | Take one frame, translate it for N audiences — frame×audience matrix with per-audience foreground / background / omissions / vocabulary / stakes |
 
 ## Architectural location
 

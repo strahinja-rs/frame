@@ -52,18 +52,22 @@ Read the unstructured situation. Pattern-match signals to candidate skills.
 | Signal in the unstructured situation | Suggests skill |
 |---|---|
 | Vague situation, "figure out", "I don't know", "help me see" | **`frame:probe`** (perception first) |
+| User pastes / references an existing `problem-statement.md` and wants it pressure-tested | **`frame:probe` Mode B** (validation) — distinct from probe Mode A (exploration) |
 | Decision-shaped ("should I do X or Y") | `frame:reframe` (alternatives) + `frame:stakes` |
 | Multi-stakeholder context (mentioned or likely) | `frame:jtbd` (per-stakeholder articulation) |
 | High stakes (irreversible, costly, identity-touching) | `frame:stakes` + consider `frame:reframe` if user seems certain |
 | Fuzzy boundaries ("where does this end?") | `frame:scope` |
 | Large existing artifact referenced (corpus, transcripts, PDF) | `frame:from-corpus` |
 | User mentions a specific analytical lens (JTBD, SWOT, Cynefin, 5 Whys, etc.) | `frame:lens` |
-| Output will be communicated to multiple stakeholder groups | (consider `frame:reframe` with audience as dimension) |
+| Output will be communicated to multiple stakeholder groups (board / team / client / public / juniors / regulators) | **`frame:audience-pivot`** (translate one frame for N audiences) |
+| User has converged on a frame, high stakes, and one explicit challenge would be valuable before commitment | **`frame:devil`** (adversarial pressure-test, one round, clean termination) |
 | Well-articulated already | go directly to `frame:problem-statement` — composer may not be needed |
 
 Build a *tentative plan* (which skills, in what order). Do not commit yet — Phase 2 intake will refine.
 
-**Default sequence shape:** Perceive (probe / from-corpus) → Articulate (problem-statement plus optional jtbd / lens / scope / stakes) → optionally Reframe → terminate with problem-statement. Iteration loops between these as needed.
+**Default sequence shape:** Perceive (probe Mode A / from-corpus) → Articulate (problem-statement plus optional jtbd / lens / scope / stakes) → optionally Reframe → optionally Devil (pressure-test before commitment) → optionally Audience-Pivot (translate for downstream audiences) → terminate with problem-statement. Iteration loops between these as needed.
+
+**Finish-frame skills (v0.2.0 additions — `frame:devil`, `frame:audience-pivot`, `frame:probe` Mode B):** these are the "you have a frame, now finish it" operations — distinct from the v0.1.0 "find a frame" operations. They typically appear later in a composition (after a frame has been articulated) and don't usually compose with each other on the same pass. When composer sequences includes finish-frame skills, they go AFTER articulate-layer skills but BEFORE the universal terminator.
 
 ### Phase 2: Intake (hard cap 4 questions; optional Phase 3(d) refinement +3; absolute ceiling 7)
 
@@ -268,7 +272,7 @@ Re-iteration is opt-in — only fires when explicitly re-invoked. Default to ori
   - `composition.md` — root document
   - `problem-statement.md` — universal terminator (the hand-off artifact)
   - Optional supporting artifacts: `probe.md`, `from-corpus.md`, `jtbd.md`, `lens.md`, `scope.md`, `stakes.md`, `reframe.md`
-- Sibling frame skills (all under the `frame` plugin namespace, all live): `frame:probe`, `frame:from-corpus`, `frame:problem-statement`, `frame:jtbd`, `frame:lens`, `frame:scope`, `frame:stakes`, `frame:reframe`. Composer invokes their Process conceptually when generating per-skill artifacts.
+- Sibling frame skills (all under the `frame` plugin namespace, all live): `frame:probe` (Mode A unstructured situation / Mode B existing-PS validation), `frame:from-corpus`, `frame:problem-statement`, `frame:jtbd`, `frame:lens`, `frame:scope`, `frame:stakes`, `frame:reframe`, `frame:devil`, `frame:audience-pivot`. Composer invokes their Process conceptually when generating per-skill artifacts.
 - Downstream sibling plugin: `approach` — receives `problem-statement.md` as input to `/approach:composer` Phase 1.
 - External callable: `/gut-check` — canonical user-invoked between-skill alignment check. Surfaced as Phase 4 checkpoint option (e). The structural discipline that catches the "iteration as procrastination" failure mode named in Anti-Patterns. Composer should NOT auto-invoke; the user reaches for it deliberately when they suspect iteration has become busy-work.
 

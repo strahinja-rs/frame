@@ -1,7 +1,7 @@
 {
   "name": "frame",
-  "version": "0.1.0",
-  "description": "Frame-space skills — the 'what' of work. Each skill takes an unstructured situation and helps the user see, articulate, or reframe the problem before any approach is chosen. AI as perceptual lever, not generator. Family: probe, problem-statement, jtbd, lens, scope, stakes, reframe, from-corpus. Plus composer (the meta-skill that picks and sequences the family, with bidirectional checkpoint to /approach). Pairs with the /approach plugin to close the loop: problem → frame → approach → solution. See ARCHITECTURE.md.",
+  "version": "0.2.0",
+  "description": "Frame-space skills — the 'what' of work. Each skill takes an unstructured situation and helps the user see, articulate, reframe, validate, pressure-test, or translate the problem before any approach is chosen. AI as perceptual lever, not generator. Find-frame family (v0.1.0): probe (with Mode B validation), from-corpus, problem-statement, jtbd, lens, scope, stakes, reframe. Finish-frame family (v0.2.0): devil (adversarial pressure-test), audience-pivot (frame×audience matrix). Plus composer (meta-skill, picks and sequences with bidirectional checkpoint to /approach). Pairs with the /approach plugin to close the loop: problem → frame → approach → solution. See ARCHITECTURE.md.",
   "author": {
     "name": "Strahinja Krstić",
     "email": "krstic@strahinja.rs"

@@ -172,24 +172,38 @@ Every step has a written artifact. Every transition is a user-controlled checkpo
 
 ---
 
-## The 9 skills (v1)
+## The 11 skills (v0.2.0)
+
+**Find-frame skills (v0.1.0):**
 
 | Skill | Layer | Job |
 |---|---|---|
 | **`frame:composer`** | Meta | Reads situation, picks frame skills, sequences, manages intake (3-4 Q cap) + bidirectional checkpoint |
-| **`frame:probe`** | A | Surface assumptions, foreground/background, missing pieces — questions, not answers |
+| **`frame:probe`** | A | Surface assumptions, foreground/background, missing pieces — questions, not answers. **Mode A** (unstructured situation, default) / **Mode B** (validate existing Problem Statement, v0.2.0 capability extension) |
 | **`frame:from-corpus`** | A→B | Extract a frame from a complex existing artifact (corpus, transcripts, docs) |
 | **`frame:problem-statement`** | B | Polya 9-target canonical Problem Statement (universal terminator) |
 | **`frame:jtbd`** | B | Jobs-to-be-Done articulation, per stakeholder |
-| **`frame:lens`** | B | Apply named analytical lens(es) — built-in library + custom-define |
+| **`frame:lens`** | B | Apply named analytical lens(es) — built-in library + custom-define + persona-shaped lenses |
 | **`frame:scope`** | B | Boundary clarification (in scope / out / adjacent) |
 | **`frame:stakes`** | B | Cost-of-error + reversibility + opportunity-cost articulation |
 | **`frame:reframe`** | C | Generate N alternative frames; foreground/background diff per alternative |
 
-**Deferred to v0.2.0** (Tier B, post-talk):
-- `frame:five-whys` — root cause investigation (narrow case)
-- `frame:audience-pivot` — frame the same situation for N stakeholders (special case of reframe)
-- `frame:devil` — actively challenge a certain frame (specialized reframe + probe)
+**Finish-frame skills (v0.2.0 additions):**
+
+| Skill | Layer | Job |
+|---|---|---|
+| **`frame:devil`** | C+ (post-reframe) | Adversarial pressure-test of a *committed* frame — steelman the opposite, name what would have to be true for the frame to be wrong. One round, clean termination. |
+| **`frame:audience-pivot`** | C+ (post-articulation) | Take one frame, translate it for N audiences — frame×audience matrix with per-audience foreground / background / omissions / vocabulary / stakes |
+
+**Distinction between find-frame and finish-frame:**
+
+- **Find-frame** (v0.1.0): exploratory operations that help you *find* the right frame for a situation. Used early, often iteratively.
+- **Finish-frame** (v0.2.0): focused operations that help you *finish* a frame you've found. Used late, before commitment or before downstream consumption. Devil pressure-tests; audience-pivot translates; probe-Mode-B validates.
+
+The full arc: *find the frame → finish the frame → hand off to /approach.*
+
+**Deferred to v0.3.0** (Tier C):
+- `frame:five-whys` — narrow root-cause case; currently covered by `frame:lens` with 5-whys as a built-in lens, so unlikely to need a standalone skill
 
 ---
 
