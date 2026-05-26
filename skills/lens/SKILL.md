@@ -200,6 +200,20 @@ These lenses have well-established question sets and don't require custom defini
 ### Custom lenses
 When the user provides a custom lens (e.g., "the 10 lenses from my Žiška discovery"), the skill reads the lens definition from the source artifact and applies it using the same Process. The artifact captures the source so the lens application is auditable.
 
+### Persona-shaped lenses
+
+A particularly useful class of custom lens is **persona-shaped**: looking at the situation through the eyes of a specific role / archetype / stakeholder type. Examples:
+
+- *Think like a regulator* — what compliance risks are foregrounded? What "common practice" assumptions does this challenge?
+- *Think like a frustrated user 6 months in* — what's tedious that the team has stopped noticing?
+- *Think like a competitor* — what's the threat / opportunity the team is best-positioned to attack from?
+- *Think like a 90-days-in employee* — what's confusing about the situation that veterans have internalized?
+- *Think like a board member with 12 minutes of attention* — what survives if everything else is cut?
+
+Persona lenses pair well with substantive lenses (e.g., apply Cynefin + the "frustrated user" persona to surface where complex-domain dynamics meet daily-use pain).
+
+**Note on the classical "expert persona" prompt** ("act as a senior X to get better output"): that's a *capability elicitation* technique, mostly subsumed by modern frontier models being capable by default. Persona-shaped lenses in `frame:lens` are a different move — they generate *foreground/background shifts*, not capability boosts. The artifact captures what each persona's eyes surface vs miss, not "what the expert would do."
+
 ## Anti-Patterns
 
 - **Using `frame:lens` with JTBD when `frame:jtbd` exists.** JTBD has its own dedicated skill because it's load-bearing enough to deserve specialized treatment. Same for stakes, scope, reframe, problem-statement — use the dedicated skill, not `frame:lens` with those names.

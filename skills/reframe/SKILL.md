@@ -66,6 +66,7 @@ Alternative-generation strategies:
 
 - **Dimension shift**: if current frame foregrounds capacity, alternative foregrounds identity. If current foregrounds money, alternative foregrounds relationship. If current foregrounds technical, alternative foregrounds organizational.
 - **Stakeholder pivot**: if current frame is from one stakeholder's perspective, alternative is from another's.
+- **Persona shift**: a related but distinct move — frame the same situation through the eyes of a specific *role / archetype* the user might not have considered. *"What does this look like through the eyes of a regulator? A frustrated user 6 months in? A competitor? A 90-days-in employee? A board member with 12 minutes of attention?"* Persona-shift differs from stakeholder-pivot in that the persona may not be a literal involved stakeholder — it's a generative archetype chosen specifically to surface what the current frame backgrounds.
 - **Time-horizon shift**: if current frame is short-term, alternative is 3-year. If current is long-term, alternative is "what would I do this week."
 - **Problem-type shift**: if current frame is "decision," alternative is "discovery." If "optimization," try "design." If "crisis," try "opportunity."
 - **Reversal**: what if the opposite were true? What if the obvious answer were wrong?

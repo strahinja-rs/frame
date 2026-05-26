@@ -193,6 +193,33 @@ Every step has a written artifact. Every transition is a user-controlled checkpo
 
 ---
 
+## Cross-cutting patterns
+
+A few patterns recur across multiple skills and are worth naming explicitly so they don't have to be re-discovered each time.
+
+### Multi-perspective work
+
+The most common cross-cutting pattern. Several skills realize it under different names — surfacing this so a user looking for "persona prompting" or "perspectives" doesn't miss the existing tooling:
+
+- **`frame:jtbd`** — each stakeholder IS a perspective with distinct progress they're trying to make; structural-tension surfacing across stakeholders is the multi-perspective payoff
+- **`frame:lens`** — analytical lenses, including persona-shaped lenses (think like a regulator, frustrated user, competitor, board member, 90-days-in employee) — each lens is a perspective on the situation
+- **`frame:reframe`** — "persona shift" is a named alternative-generation strategy; the move is generating alternatives by adopting a specific archetype's eyes
+- **`frame:probe`** — implicit perspective work via foreground/background analysis (what is *this* frame foregrounding?)
+
+In `/approach`, the same pattern appears as:
+
+- **`approach:critic` symmetric mode** — peers positioned with different personas (red/blue team, advocate/skeptic, expertise pivot)
+- **`approach:blackboard`** — specialists ARE persona-shaped roles, each with its own lens on the workspace
+
+**Important distinction.** Modern persona prompting splits two old-school techniques into one valid + one diminished:
+
+- *Diminished:* persona prompting for capability elicitation ("act as an expert X to get better output") — frontier models perform at expert level by default; the lift is small
+- *Still valuable:* persona/perspective as a generation strategy for surfacing what each perspective *foregrounds vs backgrounds* — different lift entirely; this is what /frame and /approach embody
+
+The skills above generate foreground/background shifts, not capability boosts.
+
+---
+
 ## The frame-only invariant
 
 Every skill in this plugin produces an artifact and stops. None of them execute, route, or dispatch. The user (or a downstream tool the user invokes) takes the next step.
